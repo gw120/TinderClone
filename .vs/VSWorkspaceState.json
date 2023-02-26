@@ -13,6 +13,6 @@
     "\\gradle",
     "\\gradle\\wrapper"
   ],
-  "SelectedNode": "\\app\\src\\main\\res\\layout\\activity_registration.xml",
+  "SelectedNode": "\\app\\src\\main\\java\\com\\simcoder\\tinder\\MainActivity.java",
   "PreviewInSolutionExplorer": false
 }
