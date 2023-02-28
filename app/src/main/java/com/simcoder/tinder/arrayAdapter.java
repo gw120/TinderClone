@@ -1,43 +1,34 @@
 package com.simcoder.tinder;
-
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
-import java.util.List;
-
 /**
  * Created by manel on 9/5/2017.
  */
-
-public class arrayAdapter extends ArrayAdapter<cards>{
-
-    Context context;
-
-    public arrayAdapter(Context context, int resourceId, List<cards> items){
-        super(context, resourceId, items);
+public class cards {
+    private String userId;
+    private String name;
+    public cards (String userId, String name){
+    private String profileImageUrl;
+        this.userId = userId;
+        this.name = name;
+        this.profileImageUrl = profileImageUrl;
     }
-    public View getView(int position, View convertView, ViewGroup parent){
-        cards card_item = getItem(position);
 
-        if (convertView == null){
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item, parent, false);
-        }
+    public String getUserId(){
+        return userId;
+    }
+    public void setUserID(String userID){
+        this.userId = userId;
+    }
+    public String getName(){
+        return name;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
 
-        TextView name = (TextView) convertView.findViewById(R.id.name);
-        ImageView image = (ImageView) convertView.findViewById(R.id.image);
-
-        name.setText(card_item.getName());
-        image.setImageResource(R.mipmap.ic_launcher);
-
-        return convertView;
-
+    public String getProfileImageUrl(){
+        return profileImageUrl;
+    }
+    public void setProfileImageUrl(String profileImageUrl){
+        this.profileImageUrl = profileImageUrl;
     }
 }
