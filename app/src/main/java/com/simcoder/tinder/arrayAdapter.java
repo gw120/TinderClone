@@ -1,34 +1,47 @@
 package com.simcoder.tinder;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+import com.bumptech.glide.Glide;
+import org.w3c.dom.Text;
+import java.util.List;
 /**
  * Created by manel on 9/5/2017.
  */
-public class cards {
-    private String userId;
-    private String name;
-    public cards (String userId, String name){
-    private String profileImageUrl;
-        this.userId = userId;
-        this.name = name;
-        this.profileImageUrl = profileImageUrl;
+public class arrayAdapter extends ArrayAdapter<cards>{
+    Context context;
+    public arrayAdapter(Context context, int resourceId, List<cards> items){
+        super(context, resourceId, items);
     }
+    public View getView(int position, View convertView, ViewGroup parent){
+        cards card_item = getItem(position);
+        if (convertView == null){
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item, parent, false);
+        }
+        TextView name = (TextView) convertView.findViewById(R.id.name);
+        ImageView image = (ImageView) convertView.findViewById(R.id.image);
 
-    public String getUserId(){
-        return userId;
-    }
-    public void setUserID(String userID){
-        this.userId = userId;
-    }
-    public String getName(){
-        return name;
-    }
-    public void setName(String name){
-        this.name = name;
-    }
+        name.setText(card_item.getName());
+        switch(card_item.getProfileImageUrl()){
+            case "default":
+                Glide.with(convertView.getContext()).load(R.mipmap.ic_launcher).into(image);
+                break;
+            default:
+                Glide.clear(image);
+                Glide.with(convertView.getContext()).load(card_item.getProfileImageUrl()).into(image);
+                break;
+        }
 
-    public String getProfileImageUrl(){
-        return profileImageUrl;
-    }
-    public void setProfileImageUrl(String profileImageUrl){
-        this.profileImageUrl = profileImageUrl;
+
+        return convertView;
+
     }
 }
