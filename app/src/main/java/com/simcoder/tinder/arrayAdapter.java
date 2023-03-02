@@ -44,4 +44,5 @@ public class arrayAdapter extends ArrayAdapter<cards>{
         return convertView;
 
     }
-}
+}removing the separation between male and female in…
+… the database
