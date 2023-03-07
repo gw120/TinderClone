@@ -8,9 +8,12 @@
     "\\app\\src\\main\\java\\com",
     "\\app\\src\\main\\java\\com\\simcoder",
     "\\app\\src\\main\\java\\com\\simcoder\\tinder",
+    "\\app\\src\\main\\java\\com\\simcoder\\tinder\\Matches",
     "\\app\\src\\main\\res",
-    "\\app\\src\\main\\res\\layout"
+    "\\app\\src\\main\\res\\layout",
+    "\\gradle",
+    "\\gradle\\wrapper"
   ],
-  "SelectedNode": "\\app\\src\\main\\java\\com\\simcoder\\tinder\\SettingsActivity.java",
+  "SelectedNode": "\\app\\src\\main\\res\\layout\\item_matches.xml",
   "PreviewInSolutionExplorer": false
 }
